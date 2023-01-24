@@ -6,9 +6,9 @@
         maven: 'Maven3'
         )
         {
-        steps{
+        
             sh'mvn -B -DskipTests clean package'
-        }
+        
       }
     }
     stage('Test'){
