@@ -16,7 +16,7 @@ class SampleClassTest {
     @Test
     void newSampleTest() {
         final int CHOSEN_NUMBER = 5;
-        SampleClass sampleClass = new SampleClass(3);
+        SampleClass sampleClass = new SampleClass(5);
         assertEquals(CHOSEN_NUMBER, sampleClass.getNumber());
     }
 }
