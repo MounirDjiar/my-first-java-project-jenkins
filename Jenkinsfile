@@ -1,19 +1,14 @@
-  pipeline{
+pipeline{
   agent any
   stages {
     stage('Build') {
-      withMaven(
-        maven: 'Maven3'
-        )
-        {
-        
-            sh'mvn -B -DskipTests clean package'
-        
+      steps{
+          bat'mvn -B -DskipTests clean package'
       }
     }
     stage('Test'){
       steps {
-          sh 'mvn test'
+          bat 'mvn test'
       }
       post {
         always {
@@ -23,7 +18,7 @@
     }
     stage('Deliver') {
       steps {
-          sh 'echo "Delivering project..."'
+          bat 'echo "Delivering project..."'
       }
     }
   }
