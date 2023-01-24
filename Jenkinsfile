@@ -1,17 +1,17 @@
 pipeline{
   agent any
   tools {
-    maven "Maven3"
+    maven 'Maven3'
   }
   stages {
     stage('Build') {
       steps{
-          bat'mvn -B -DskipTests clean package'
+          sh'mvn -B -DskipTests clean package'
       }
     }
     stage('Test'){
       steps {
-          bat 'mvn test'
+          sh 'mvn test'
       }
       post {
         always {
@@ -21,7 +21,7 @@ pipeline{
     }
     stage('Deliver') {
       steps {
-          bat 'echo "Delivering project..."'
+          sh 'echo "Delivering project..."'
       }
     }
   }
